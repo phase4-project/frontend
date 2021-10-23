@@ -7,7 +7,7 @@ function Landingpage() {
         <div className='top-bar'>
             <Navbar />
             <h1 className='app-name'>App Name</h1>
-            <img className='search-icon' src={magnify} />
+            <img className='search-icon' src={magnify} alt='magnifying glass' />
         </div>
     )
 }
