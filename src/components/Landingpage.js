@@ -1,5 +1,4 @@
-import React, { useState } from 'react'
-import magnify from '../magnifier.png'
+import React from 'react'
 import Cards from './Cards'
 
 
