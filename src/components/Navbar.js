@@ -1,5 +1,6 @@
 import React from 'react'
 import { slide as Menu } from 'react-burger-menu'
+import { Link } from 'react-router-dom'
 
 function Navbar({ user, handleUser }) {
 
@@ -7,18 +8,16 @@ function Navbar({ user, handleUser }) {
         <Menu isOpen={false}>
             {user ?
                 <nav>
-                    <a id='Sign up' className='menu-item' href='/'>Home</a>
-                    <a id='Sign up' className='menu-item' href='/profile'>My Cars</a>
-                    <a id='Sign up' className='menu-item' href='/login'>Log out</a>
-                    <a id='Sign up' className='menu-item' href='/about'>About</a>
-                    <button onClick={handleUser}>Log out</button>
+                    <Link to='/'><a id='Sign up' className='menu-item' href='/'>Home</a></Link>
+                    <Link to='/profile'><a id='Sign up' className='menu-item' href='/profile'>My Cars</a></Link>
+                    <Link to='/'><a id='Sign up' className='menu-item' href='/login' onClick={handleUser}>Log out</a></Link>
+                    <Link to='/about'><a id='Sign up' className='menu-item' href='/about'>About</a></Link>
                 </nav> :
                 <nav>
-                    <a id='Sign up' className='menu-item' href='/'>Home</a>
-                    <a id='Sign up' className='menu-item' href='/signup'>Sign up</a>
-                    <a id='Sign up' className='menu-item' href='/login'>Log in</a>
-                    <a id='Sign up' className='menu-item' href='/about'>About</a>
-                    <button onClick={handleUser}>Log in</button>
+                    <Link to='/'><a id='Sign up' className='menu-item' href='/'>Home</a></Link>
+                    <Link to='/signup'><a id='Sign up' className='menu-item' href='/signup'>Sign up</a></Link>
+                    <Link to='/'><a id='Sign up' className='menu-item' href='/login' onClick={handleUser}>Log in</a></Link>
+                    <Link to='/about'><a id='Sign up' className='menu-item' href='/about'>About</a></Link>
                 </nav>
             }
         </Menu>
