@@ -65,6 +65,7 @@ body {
   font-size: 30px;
   color: white;
   margin-right: 4%;
+  padding-top: 2%;
 }
 
 .nav-bar {
@@ -84,19 +85,88 @@ body {
   cursor: pointer;
 }
 
-.line-1 {
-  width: 26px;
-  border-bottom: 1px solid white;
+.bm-burger-button {
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  left: 6%;
+  top: 4%;
 }
 
-.line-2 {
-  width: 22px;
-  border-bottom: 1px solid white;
-  margin-top: 14%;
+.bm-burger-bars {
+  background: white;
 }
 
-.line-3 {
-  width: 18px;
-  border-bottom: 1px solid white;
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: white;
+}
+
+.bm-menu {
+  background-color: #262626;
+  width: 100%;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+} */
+
+.bm-morph-shape {
+  fill: #262626;
+}
+
+.bm-menu-wrap {
+  position: fixed;
+  height: 100%;
+}
+
+.bm-overlay {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.bm-item-list {
+  overflow-y: hidden;
+}
+ 
+
+nav a {
+  display: flex;
+  text-decoration: none;
+}
+
+.menu-item {
+  text-align: center;
   margin-top: 18%;
+  margin-left: 32%;
+  font-size: 24px;
+  color: white;
+}
+
+.menu-item:hover {
+  text-decoration: underline;
+}
+
+.search {
+  float: right;
+  margin-right: 6%;
+  margin-top: -1.2%;
+}
+
+.landing-content input {
+  width: 10%;
+  border: none;
+  border-bottom: 1px solid white;
+  font-size: 18px;
+  background-color: #262626;
+  color: white;
+}
+
+.landing-content input::placeholder {
+  color: gray;
+}
+
+.landing-content input:focus {
+  outline: none;
 }
