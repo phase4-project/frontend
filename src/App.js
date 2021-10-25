@@ -4,12 +4,15 @@ import Landingpage from "./components/Landingpage"
 import Navbar from './components/Navbar'
 import About from './components/About'
 import { Switch, Route } from 'react-router-dom'
-import magnify from './magnifier.png'
+import Pagination from './components/Pagination'
 
 function App() {
   const [search, onSearch] = useState(false)
   const [user, setUser] = useState(false)
   const [cars, setCars] = useState([])
+  const [currentPage, setCurrentPage] = useState(1)
+  const [postsPerPage] = useState(6)
+
 
   useEffect(() => {
     fetch('https://fathomless-island-77616.herokuapp.com/cars')
@@ -27,13 +30,18 @@ function App() {
     setUser(!user)
   }
 
+  const indexOfLastPost = currentPage * postsPerPage;
+  const indexOfFirstPost = indexOfLastPost - postsPerPage;
+  const currentPosts = cars.slice(indexOfFirstPost, indexOfLastPost)
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+
   return (
     <div>
       <Navbar user={user} handleUser={handleUser} />
       {user ?
         <div className='landing-content'>
           <h1 className='app-name'>App Name</h1>
-          {search ? <input placeholder='Search Cars...' className='search' /> : <img className='search-icon' onClick={handleClick} src={magnify} alt='magnifying glass' />}
           <div className='user-content'>
             <h1>Welcome back, Billy</h1>
             <button>Add Car</button>
@@ -42,11 +50,13 @@ function App() {
         :
         <div className='landing-content'>
           <h1 className='app-name'>App Name</h1>
-          {search ? <input placeholder='Search Cars...' className='search' /> : <img className='search-icon' onClick={handleClick} src={magnify} alt='magnifying glass' />}
         </div>
       }
       <Switch>
-        <Landingpage exact path='/' cars={cars} user={user} />
+        <Route exact path='/'>
+          <Landingpage cars={currentPosts} user={user} handleClick={handleClick} search={search} />
+          <Pagination postsPerPage={postsPerPage} totalPosts={cars.length} paginate={paginate} />
+        </Route>
         <Route path='/about'>
           <About />
         </Route>

@@ -1,11 +1,12 @@
 import React from 'react'
 import { slide as Menu } from 'react-burger-menu'
 import { Link } from 'react-router-dom'
+import burgermenu from '../bm-white.png'
 
 function Navbar({ user, handleUser }) {
 
     return (
-        <Menu isOpen={false}>
+        <Menu customBurgerIcon={<img src={burgermenu} alt='burgermenu' />} isOpen={false}>
             {user ?
                 <nav>
                     <Link to='/'><a id='Sign up' className='menu-item' href='/'>Home</a></Link>

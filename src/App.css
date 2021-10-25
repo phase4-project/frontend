@@ -74,14 +74,15 @@ body {
   color: white;
   cursor: pointer;
   margin-top: .5%;
+  background-color: #262626;
 }
 
 .search-icon {
   float: right;
   padding-right: 6%;
-  margin-top: -1%;
   width: 1.2%;
   cursor: pointer;
+  margin-top: -1.5%;
 }
 
 .bm-burger-button {
@@ -153,7 +154,7 @@ nav a {
   margin-top: -1.2%;
 }
 
-.landing-content input {
+.search-info input {
   width: 10%;
   border: none;
   border-bottom: 1px solid white;
@@ -162,11 +163,11 @@ nav a {
   color: white;
 }
 
-.landing-content input::placeholder {
+.search-info input::placeholder {
   color: gray;
 }
 
-.landing-content input:focus {
+.search-info input:focus {
   outline: none;
 }
 
@@ -176,6 +177,7 @@ nav a {
   flex-wrap: wrap;
   justify-content: space-evenly;
   margin-top: 2%;
+  margin-bottom: 2%;
 }
 
 .flip-card {
@@ -342,3 +344,11 @@ nav a {
 .user-content button:hover {
 	transform: translateY(-4px);
 }
+
+.pagination {
+  text-align: center;
+  margin-left: 50%;
+  display: flex;
+}
+
+
