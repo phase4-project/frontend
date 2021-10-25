@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "./App.css"
 import Landingpage from "./components/Landingpage"
 import Navbar from './components/Navbar'
@@ -7,9 +7,17 @@ import { Switch, Route } from 'react-router-dom'
 import magnify from './magnifier.png'
 
 function App() {
-
   const [search, onSearch] = useState(false)
   const [user, setUser] = useState(false)
+  const [cars, setCars] = useState([])
+
+  useEffect(() => {
+    fetch('https://fathomless-island-77616.herokuapp.com/cars')
+      .then(res => res.json())
+      .then(setCars)
+  }, [])
+
+  console.log(cars);
 
   function handleClick() {
     onSearch(!search)
@@ -38,7 +46,7 @@ function App() {
         </div>
       }
       <Switch>
-        <Landingpage exact path='/' />
+        <Landingpage exact path='/' cars={cars} user={user} />
         <Route path='/about'>
           <About />
         </Route>
