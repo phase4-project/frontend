@@ -347,8 +347,17 @@ nav a {
 
 .pagination {
   text-align: center;
-  margin-left: 50%;
+  margin-left: 48%;
   display: flex;
+}
+
+.page-item {
+  margin-left: 2%;
+}
+
+.page-link {
+  color: white;
+  font-size: 18px;
 }
 
 
