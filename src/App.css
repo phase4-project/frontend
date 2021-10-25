@@ -349,6 +349,7 @@ nav a {
   text-align: center;
   margin-left: 48%;
   display: flex;
+  margin-bottom: 2%;
 }
 
 .page-item {
@@ -356,8 +357,13 @@ nav a {
 }
 
 .page-link {
-  color: white;
+  color: black;
+  background-color: white;
   font-size: 18px;
+  border-radius: 50%;
+  cursor: pointer;
 }
+
+
 
 

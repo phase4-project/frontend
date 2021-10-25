@@ -34,7 +34,10 @@ function App() {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = cars.slice(indexOfFirstPost, indexOfLastPost)
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber)
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber)
+    window.scrollTo(0, 0)
+  }
 
   return (
     <div>
