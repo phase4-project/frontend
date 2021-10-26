@@ -9,7 +9,6 @@ function Landingpage({ cars, user, handleClick, search }) {
     const searchList = cars.filter((car) => {
         return car.make.toLowerCase().includes(searchCar.toLowerCase())
     })
-    // currentPosts = searchList;
 
     return (
         <>
