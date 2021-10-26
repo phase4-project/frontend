@@ -3,12 +3,13 @@ import Cards from './Cards'
 import Search from './Search'
 
 
-function Landingpage({ cars, user, handleClick, search }) {
+function Landingpage({ cars, user, handleClick, search, currentPosts }) {
     const [searchCar, setSearchCar] = useState('')
 
     const searchList = cars.filter((car) => {
         return car.make.toLowerCase().includes(searchCar.toLowerCase())
     })
+    currentPosts = searchList;
 
     return (
         <>

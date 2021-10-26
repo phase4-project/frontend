@@ -34,10 +34,12 @@ function App() {
   const indexOfFirstPost = indexOfLastPost - postsPerPage;
   const currentPosts = cars.slice(indexOfFirstPost, indexOfLastPost)
 
+
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber)
     window.scrollTo(0, 0)
   }
+
 
   return (
     <div>
@@ -57,7 +59,7 @@ function App() {
       }
       <Switch>
         <Route exact path='/'>
-          <Landingpage cars={currentPosts} user={user} handleClick={handleClick} search={search} />
+          <Landingpage cars={cars} currentPosts={currentPosts} user={user} handleClick={handleClick} search={search} />
           <Pagination postsPerPage={postsPerPage} totalPosts={cars.length} paginate={paginate} />
         </Route>
         <Route path='/about'>
