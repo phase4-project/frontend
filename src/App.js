@@ -59,7 +59,7 @@ function App() {
       }
       <Switch>
         <Route exact path='/'>
-          <Landingpage cars={cars} currentPosts={currentPosts} user={user} handleClick={handleClick} search={search} />
+          <Landingpage cars={currentPosts} user={user} handleClick={handleClick} search={search} />
           <Pagination postsPerPage={postsPerPage} totalPosts={cars.length} paginate={paginate} />
         </Route>
         <Route path='/about'>
