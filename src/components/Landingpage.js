@@ -3,7 +3,7 @@ import Cards from './Cards'
 import Search from './Search'
 
 
-function Landingpage({ cars, user, handleClick, search }) {
+function Landingpage({ cars, user, handleClick, search, singleCarFetch, setPageId}) {
     const [searchCar, setSearchCar] = useState('')
 
     const searchList = cars.filter((car) => {
@@ -24,6 +24,8 @@ function Landingpage({ cars, user, handleClick, search }) {
                         price={car.price}
                         time={car.time}
                         user={user}
+                        singleCarFetch={singleCarFetch}
+                        setPageId={setPageId}
                     />
                 ))}
             </div>

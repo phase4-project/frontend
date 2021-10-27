@@ -1,6 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-function Cards({ engine, horsepower, image, make, model, price, time, user }) {
+function Cards({ engine, horsepower, image, make, model, price, time, user, id, singleCarFetch, setPageId}) {
 
     return (
         <div className='flip-card'>
@@ -11,7 +12,7 @@ function Cards({ engine, horsepower, image, make, model, price, time, user }) {
                 </div>
                 {user ?
                     <div className='back'>
-                        <button className='review'>Add Review</button>
+                       <button className='review' onClick={()=>{singleCarFetch(id)}}><Link to={`/${id}`}><a id='Sign up' className='review' href='/CarReviews'>Add Review</a></Link> </button>
                         <div className='back-container'>
                             <div className='back-info'>
                                 <h1>{make} {model}</h1>
