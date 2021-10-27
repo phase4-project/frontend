@@ -1,14 +1,13 @@
 import React from 'react'
 import magnify from '../magnifier.png'
 
-export default function Search({ handleClick, search, searchCar, setSearchCar }) {
-
+export default function Search({ handleSearchIcon, searchIcon, search, setSearch }) {
     return (
         <div className='search-info'>
-            {search ?
-                <input placeholder='Search Cars...' className='search' value={searchCar} onChange={(e) => setSearchCar(e.target.value)} />
+            {searchIcon ?
+                <input placeholder='Search Cars...' className='search' value={search} onChange={(e) => setSearch(e.target.value)} />
                 :
-                <img className='search-icon' onClick={handleClick} src={magnify} alt='magnifying glass' />
+                <img className='search-icon' onClick={handleSearchIcon} src={magnify} alt='magnifying glass' />
             }
         </div>
     )

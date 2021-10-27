@@ -1,28 +1,27 @@
 import React from 'react'
 import { slide as Menu } from 'react-burger-menu'
 import { Link } from 'react-router-dom'
-import burgermenu from '../bm-white.png'
 
-function Navbar({ user, handleUser }) {
+export default function Navbar({ currentUser }) {
+    console.log(currentUser);
 
     return (
-        <Menu customBurgerIcon={<img src={burgermenu} alt='burgermenu' />} isOpen={false}>
-            {user ?
+        <Menu isOpen={false}>
+            {currentUser ?
                 <nav>
-                    <Link to='/'><a id='Sign up' className='menu-item' href='/'>Home</a></Link>
-                    <Link to='/profile'><a id='Sign up' className='menu-item' href='/profile'>My Cars</a></Link>
-                    <Link to='/'><a id='Sign up' className='menu-item' href='/login' onClick={handleUser}>Log out</a></Link>
-                    <Link to='/about'><a id='Sign up' className='menu-item' href='/about'>About</a></Link>
-                </nav> :
+                    <Link to='/home'><a className='menu-item' href='/home'>Home</a></Link>
+                    <Link to='/profile'><a className='menu-item' href='/profile'>Your Cars</a></Link>
+                    <Link to='/'><a className='menu-item' href='/login'>Log out</a></Link>
+                    <Link to='/about'><a className='menu-item' href='/about'>About</a></Link>
+                </nav>
+                :
                 <nav>
-                    <Link to='/'><a id='Sign up' className='menu-item' href='/'>Home</a></Link>
-                    <Link to='/signup'><a id='Sign up' className='menu-item' href='/signup'>Sign up</a></Link>
-                    <Link to='/'><a id='Sign up' className='menu-item' href='/login' onClick={handleUser}>Log in</a></Link>
-                    <Link to='/about'><a id='Sign up' className='menu-item' href='/about'>About</a></Link>
+                    <Link to='/home'><a className='menu-item' href='/home'>Home</a></Link>
+                    <Link to='/signup'><a className='menu-item' href='/signup'>Sign up</a></Link>
+                    <Link to='/login'><a className='menu-item' href='/login'>Log in</a></Link>
+                    <Link to='/about'><a className='menu-item' href='/about'>About</a></Link>
                 </nav>
             }
         </Menu>
     )
 }
-
-export default Navbar
