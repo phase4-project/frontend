@@ -7,7 +7,7 @@ import Pagination from './components/Pagination'
 import Reviews from "./components/Reviews";
 import Signup from "./components/Signup"
 import AddCar from './components/AddCar'
-import { Switch, Route, useHistory } from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import './App.css';
 
 function App() {
